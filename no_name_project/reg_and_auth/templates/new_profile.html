@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/new_profile.css' %}" type="text/css">
+    <title>New profile</title>
+</head>
+<body>
+    <h1>Новый профиль</h1>
+    <form class="create_new_profile" method="post" action="/reg_and_auth/new_profile_post">
+        {% csrf_token %}
+        <label for="name">Имя</label>
+        <input name="name" type="name" id="name">
+        <br>
+        <label for="surname">Фамилия</label>
+        <input name="surname" type="text" id="surname">
+        <br>
+        <label for="father">Отчество</label>
+        <input type="text" name="father" id="father">
+        <br>
+        
+        <legend>Пол</legend>
+        <div>
+            <input type="radio" name="gender" id="gender_fem">
+            <label for="gender_fem">Женский</label>
+        
+            <input type="radio" name="gender" id="gender_mas">
+            <label for="gender_mas">Мужской</label>
+        </div>
+
+        <br>
+        <label for="ages">Дата рождения</label>
+        <input type="date" name="ages" id="ages">
+        <br>
+
+        <legend>Места оповещения</legend>
+        <div>
+            <input type="checkbox" name="message_places" id="message_email">
+            <label for="message_email">Почта</label>
+            
+            <input type="checkbox" name="message_places" id="message_telegram">
+            <label for="message_telegram">Telegram</label>
+            
+            <input type="checkbox" name="message_places" id="message_vk">
+            <label for="message_vk">Vk</label>
+        </div>
+
+        <br>
+        <input value="Сохранить" type="submit">
+    </form>
+</body>
+</html>

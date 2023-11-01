@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css'%}" type="text/css">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Регитрация</h1>
+    <form class="in_reg" method="post" action="/reg_and_auth/reg_post">
+        {% csrf_token %}
+        <label for="email">Почта</label>
+        <input name="email" type="email" id="email">
+        <label for="password">Пароль</label>
+        <input name="password" type="password" id="password">
+        <br>
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</body>
+</html>

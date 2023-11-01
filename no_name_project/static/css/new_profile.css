@@ -1,0 +1,5 @@
+.create_new_profile{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
