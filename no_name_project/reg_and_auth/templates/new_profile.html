@@ -9,9 +9,22 @@
 </head>
 <body>
     <h1>Новый профиль</h1>
-    <form class="create_new_profile" method="post" action="/reg_and_auth/new_profile_post">
+    <form class="create_new_profile" method="post" action="/reg_and_auth/new_profile">
         {% csrf_token %}
-        <label for="name">Имя</label>
+        <table>
+            {{ form }}
+        </table>
+        
+
+        <br>
+        <input value="Сохранить" type="submit">
+    </form>
+    
+    
+    
+    
+    
+    <!-- <label for="name">Имя</label>
         <input name="name" type="name" id="name">
         <br>
         <label for="surname">Фамилия</label>
@@ -45,10 +58,6 @@
             
             <input type="checkbox" name="message_places" id="message_vk">
             <label for="message_vk">Vk</label>
-        </div>
-
-        <br>
-        <input value="Сохранить" type="submit">
-    </form>
+        </div> -->
 </body>
 </html>

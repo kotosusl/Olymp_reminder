@@ -9,16 +9,21 @@
 </head>
 <body>
     <h1>Вход</h1>
-    <form class="in_log" method="post" action="/reg_and_auth/log_in_post">
+    <form class="in_log" method="post" action="/reg_and_auth/log_in">
         {% csrf_token %}
-        <label for="email">Почта</label>
-        <input name="email" type="email" id="email">
-        <label for="password">Пароль</label>
-        <input name="password" type="password" id="password">
+        <table>
+            {{ form }}
+        </table>
         <br>
         <input value="Войти" type="submit">
     </form>
     <br><br>
     <input value="Забыли пароль?" type="submit">
+    
+    
+    <!-- <label for="email">Почта</label>
+        <input name="email" type="email" id="email">
+        <label for="password">Пароль</label>
+        <input name="password" type="password" id="password"> -->
 </body>
 </html>
