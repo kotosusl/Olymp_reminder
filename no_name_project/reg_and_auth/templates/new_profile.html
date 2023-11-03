@@ -12,7 +12,13 @@
     <form class="create_new_profile" method="post" action="/reg_and_auth/new_profile">
         {% csrf_token %}
         <table>
-            {{ form }}
+            <table>
+                {% for field in form %}
+                <tr><th>{{field.label_tag}}</th> <td>{{ field }}</td></tr>
+                <div class="error">{{field.errors}}</div>
+                <br>
+                {% endfor %}
+            </table>
         </table>
         
 

@@ -12,7 +12,12 @@
     <form class="in_log" method="post" action="/reg_and_auth/log_in">
         {% csrf_token %}
         <table>
-            {{ form }}
+            <table>
+                {% for field in form %}
+                <tr><th>{{field.label_tag}}</th> <td>{{ field }}</td></tr>
+                <div class="error">{{field.errors}}</div>
+                {% endfor %}
+            </table>
         </table>
         <br>
         <input value="Войти" type="submit">
